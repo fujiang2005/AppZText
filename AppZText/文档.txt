@@ -1,0 +1,114 @@
+android:noHistory属性，为true和false。
+
+启动ActivityTest之后，在点击返回，直接回到了桌面，也就是说MainActivity存在的历史被清空了。同理三个Activity依次启动，Activity1->Activity2->Activity3，如果我们将Activity2的noHistory属性设置成了true，那么在Activity3点返回时将回到Activity1。
+这个属性一般用于特殊逻辑的处理，比如跳出这个Activity就不想再看到它，就可以用设置这个Activity的noHistory属性为true
+
+launchMode:singleTask
+基础总结篇之二：Activity的四种launchMode - Scott - 博客频道 - CSDN.NET
+http://blog.csdn.net/liuhe688/article/details/6754323/
+
+android.intent.view
+android intent action 介绍大全 - 每天都记录一点点！ - 博客频道 - CSDN.NET
+http://blog.csdn.net/playboyanta123/article/details/7913679
+
+切换屏幕属性
+android:configChanges属性_百度经验
+http://jingyan.baidu.com/article/2fb0ba4056b25700f2ec5faf.html
+
+腾讯SDK配置ActivityMainFest后，无法安装到模拟器
+现象：App无法安装
+解决：《Activity》节点负责单独写在《aplication》节点下
+
+
+
+腾讯sample示例
+tqq_info_activity.xml 用户微博资料，发送、删除、发送一条带图微博
+account_info_activity.xml	获取用户登录信息
+other_api_activity.xml 昵称显示、最近@、获取openID、验证Token
+快速支付登录等
+
+MainActivity获得授权，才可以登录。测试可以授权写死
+TQQInfoActivity 微博发送删除示例
+
+SDK接入指南之鉴权篇
+http://sanwen8.cn/p/x17z9L.html
+
+详细的SDK授权参考资料
+Android之QQ授权登录获取用户信息 - bear_huangzhen的专栏 - 博客频道 - CSDN.NET http://blog.csdn.net/bear_huangzhen/article/details/46602741
+
+转一个QQ登陆SDK使用说明，附SDK以及demo - clarenceV1 - 博客园
+http://www.cnblogs.com/clarence/archive/2013/12/16/3476411.html
+
+Url := Format(TokenUrl, [AppID, AppSecret]);//AppID,AppSecret在你的公众平台上可以查到
+J := TJSONObject.ParseJSONValue(GetMethod(Url, 1)) as TJSONObject;
+try
+if J.Count > 0 then
+begin
+Access_Token := J.GetValue('access_token').Value;//这就是后面做什么都要用到的access_token，每天获取的次数是每天2000次，所以不能每次用都重新获取
+Expires_IN := J.GetValue('expires_in').Value.ToInteger;//access_token的过期时间，7200秒，所以要在过期前重新获取
+end;
+
+***************************************************
+详细授权参考资料：
+Android之QQ授权登录获取用户信息 - bear_huangzhen的专栏 - 博客频道 - CSDN.NET http://blog.csdn.net/bear_huangzhen/article/details/46602741
+
+Android_SDK使用说明 — 文档资料--QQ互联
+http://wiki.connect.qq.com/android_sdk%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E#4.4.1.E8.8E.B7.E5.8F.96access_token.E5.92.8Copenid
+
+腾讯微博认证授权实现
+http://blog.csdn.net/wwj_748/article/details/17198989
+
+http://www.open-open.com/lib/view/open1448418234907.html
+
+基于Android SDK腾讯微博授权认证实现
+http://blog.csdn.net/wwj_748/article/details/17198989
+
+腾讯微博（授权，获取个人信息，分享） 
+http://www.cnblogs.com/maxinliang/archive/2012/11/21/2780034.html
+
+官方授权方式是拉起QQ客户端进行授权
+http://www.codes51.com/itwd/699031.html
+
+
+***********************************************************
+
+base-adapter-helper的RecyclerView版 - 泡在网上的日子
+http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0809/3277.html
+
+Android LRecyclerView实现下拉刷新，滑动到底部自动加载更多 - 泡在网上的日子
+http://www.jcodecraeer.com/plus/view.php?aid=4533
+
+打造最强RecyclerView，Item侧滑菜单，长按拖拽Item，滑动删除Item - 泡在网上的日子
+http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2016/0805/4573.html
+
+你可能漏掉的知识点: onResumeFragments - 泡在网上的日子
+http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0616/3049.html
+
+FlyRefresh——让人眼前一亮的下拉刷新 - 泡在网上的日子
+http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0603/2987.html
+
+Android4.4及以上版本实现状态栏与顶栏同色 - 泡在网上的日子
+http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0610/3027.html
+
+来讲讲Git这个玩意到底该怎么用？ - 路过暴风 的个人空间 - 开源中国社区 http://my.oschina.net/u/150705/blog/191534
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
